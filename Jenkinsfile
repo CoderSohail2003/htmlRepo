@@ -4,7 +4,9 @@ pipeline {
     stage('Checkout') {
       steps { // Corrected from 'step'
         echo 'Checking out repo'
+        git branch : 'main'
         git 'https://github.com/CoderSohail2003/htmlRepo.git'
+        
       }
     }
     stage('Publish') {
