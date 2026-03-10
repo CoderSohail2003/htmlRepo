@@ -1,0 +1,24 @@
+pipeline {
+  agent any 
+  stages{
+    stage('checkout'){
+      step{
+        echo 'checking out repo'
+        git 'https://github.com/CoderSohail2003/htmlRepo.git'
+      }
+    }
+    stage('publish'){
+      step{
+        echo 'checking out repo'
+        publishHTML([
+          allowmissing:true,
+          alwaysLinkToLastBuild:false,
+          keepAll:false,
+          reportDir:'.',
+          reportFiles:'hello.html',
+          reportName:'MY HTML PIPE PAGE'
+        ])
+      }
+    }
+  }
+}
