@@ -1,22 +1,22 @@
 pipeline {
   agent any 
-  stages{
-    stage('checkout'){
-      step{
-        echo 'checking out repo'
+  stages {
+    stage('Checkout') {
+      steps { // Corrected from 'step'
+        echo 'Checking out repo'
         git 'https://github.com/CoderSohail2003/htmlRepo.git'
       }
     }
-    stage('publish'){
-      step{
-        echo 'checking out repo'
+    stage('Publish') {
+      steps { // Corrected from 'step'
+        echo 'Publishing HTML'
         publishHTML([
-          allowmissing:true,
-          alwaysLinkToLastBuild:false,
-          keepAll:false,
-          reportDir:'.',
-          reportFiles:'hello.html',
-          reportName:'MY HTML PIPE PAGE'
+          allowMissing: true, // Corrected casing: allowMissing
+          alwaysLinkToLastBuild: false,
+          keepAll: false,
+          reportDir: '.',
+          reportFiles: 'hello.html',
+          reportName: 'MY HTML PIPE PAGE'
         ])
       }
     }
