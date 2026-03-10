@@ -4,7 +4,7 @@ pipeline {
     stage('Checkout') {
       steps { // Corrected from 'step'
         echo 'Checking out repo'
-        git branch: 'main', url: 'https://github.com/user/repo.git'
+        git branch: 'main', url: 'https://github.com/CoderSohail2003/htmlRepo.git'
         
       }
     }
